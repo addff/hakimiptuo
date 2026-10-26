@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Roots & Legacy | Family Heritage Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Roots<span>&</span>Legacy
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#family-tree">Family Tree</a>
+                <a href="#members">Family Members</a>
+                <a href="#about">About</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                OUR FAMILY HERITAGE
+            </span>
+
+            <h1>
+                Every Family Has
+                <span>A Story To Tell.</span>
+            </h1>
+
+            <p>
+                Discover the people, connections, and
+                generations that shape our family history.
+                Explore our roots and preserve our legacy
+                for future generations.
+            </p>
+
+            <a href="#family-tree" class="primary-btn">
+                Explore Family Tree
+            </a>
+
+        </div>
+
+        <div class="hero-decoration">
+            <div class="tree-symbol">🌳</div>
+        </div>
+
+    </section>
+
+    <!-- FAMILY STATISTICS -->
+    <section class="stats-section">
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h2 id="totalMembers">0</h2>
+                <p>Family Members</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="totalGenerations">0</h2>
+                <p>Generations</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="totalFamilies">0</h2>
+                <p>Family Couples</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAMILY TREE SECTION -->
+    <section id="family-tree" class="section">
+
+        <div class="section-header">
+
+            <span class="section-label">OUR ROOTS</span>
+
+            <h2>Explore Our Family Tree</h2>
+
+            <p>
+                Discover family relationships across
+                different generations.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTER -->
+        <div class="tree-controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search family member..."
+                aria-label="Search family member"
+            >
+
+            <select id="generationFilter"
+                    aria-label="Filter by generation">
+
+                <option value="all">All Generations</option>
+                <option value="1">Generation 1</option>
+                <option value="2">Generation 2</option>
+                <option value="3">Generation 3</option>
+
+            </select>
+
+            <button id="resetBtn" class="secondary-btn">
+                Reset
+            </button>
+
+        </div>
+
+
+        <!-- FAMILY TREE DISPLAY -->
+        <div class="tree-wrapper">
+
+            <div id="familyTree" class="family-tree">
+
+                <p class="loading-text">
+                    Loading family tree...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAMILY MEMBERS SECTION -->
+    <section id="members" class="section members-section">
+
+        <div class="section-header">
+
+            <span class="section-label">
+                THE PEOPLE BEHIND OUR STORY
+            </span>
+
+            <h2>Meet Our Family Members</h2>
+
+            <p>
+                Get to know the individuals who
+                make up our family heritage.
+            </p>
+
+        </div>
+
+        <div id="membersGrid" class="members-grid">
+
+            <p class="loading-text">
+                Loading family members...
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAMILY MEMBER PROFILE MODAL -->
+    <div id="profileModal"
+         class="modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="profileName"
+         aria-hidden="true">
+
+        <div class="modal-content">
+
+            <button id="closeModal"
+                    class="close-modal"
+                    aria-label="Close profile">
+                &times;
+            </button>
+
+            <div class="profile-header">
+
+                <div id="profileAvatar"
+                     class="profile-avatar">
+                    👤
+                </div>
+
+                <h2 id="profileName">
+                    Family Member
+                </h2>
+
+                <p id="profileGeneration"></p>
+
+            </div>
+
+            <div id="profileDetails"
+                 class="profile-details">
+            </div>
+
+            <div id="profileRelationships"
+                 class="profile-relationships">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+
+        <div class="section-header">
+
+            <span class="section-label">OUR HERITAGE</span>
+
+            <h2>Preserving Our Family Legacy</h2>
+
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                Roots & Legacy is an interactive family
+                heritage website designed to preserve
+                and explore family relationships.
+            </p>
+
+            <p>
+                Through a structured JSON dataset,
+                the website dynamically displays family
+                members, generations, parents, spouses,
+                and children using JavaScript.
+            </p>
+
+            <p>
+                This project demonstrates the
+                Model-View-Controller (MVC) architecture
+                to organize data, presentation,
+                and user interaction.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>Roots<span>&</span>Legacy</h3>
+
+            <p>
+                Every generation tells a story.
+                Every connection creates a legacy.
+            </p>
+
+            <p class="copyright">
+                &copy; <span id="currentYear"></span>
+                Roots & Legacy | ITT588 Lab Work 4
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MVC JAVASCRIPT FILES -->
+    <script type="module" src="js/controller.js"></script>
+
+</body>
+</html>
